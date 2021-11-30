@@ -19,8 +19,8 @@ namespace Lab3.HomeWorks
         public int Age { get; set; }
         public override bool Equals(object? obj)
         {
-            ClassTest test = (ClassTest)obj;
-            if (obj != null)
+            ClassTest test = (ClassTest?)obj;
+            if (test != null)
             {
                 return this.Name == test.Name && this.Age == test.Age;
             }
@@ -29,7 +29,7 @@ namespace Lab3.HomeWorks
 
         public int CompareTo(object? obj)
         {
-            ClassTest test = (ClassTest)obj;
+            ClassTest test = (ClassTest?)obj;
             if (test != null)
             {
                 if (this.Age > test.Age) return 1;
